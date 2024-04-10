@@ -4,12 +4,12 @@
 
 @layer base {
   .blog-content {
-    @apply text-orange-600;
+    @apply text-gray-600;
     @apply max-w-screen-md;
   }
 
   .blog-content a {
-    @apply text-orange-600;
+    @apply text-black;
     @apply underline;
   }
 
@@ -34,33 +34,33 @@
 
   .blog-content h1 {
     @apply text-4xl;
-    @apply text-orange-900;
+    @apply text-gray-900;
     @apply font-bold;
     @apply my-3;
   }
 
   .blog-content h2 {
     @apply text-2xl;
-    @apply text-orange-900;
+    @apply text-gray-900;
     @apply font-bold;
     @apply my-3;
   }
 
   .blog-content h3 {
     @apply text-xl;
-    @apply text-orange-900;
+    @apply text-gray-900;
     @apply font-bold;
     @apply my-3;
   }
 
   .blog-content h4 {
-    @apply text-orange-900;
+    @apply text-gray-900;
     @apply font-bold;
     @apply my-3;
   }
 
   .blog-content h5 {
-    @apply text-orange-900;
+    @apply text-gray-900;
     @apply text-sm;
     @apply font-bold;
     @apply my-3;
