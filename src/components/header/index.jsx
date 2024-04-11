@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
-
+import pdf from '../../pages/AlexSantonastaso.pdf';
 import profileImg from '../../images/profile.jpg';
 
 const classes = {
@@ -35,16 +35,6 @@ const Header = ({ metadata = {}, noBlog = false }) => {
         </h1>
         <p className={classes.description}>{metadata.description}</p>
         <ul className={classes.list}>
-          {twitter && (
-            <li className={classes.item}>
-              <a
-                className={classes.link}
-                href={`https://twitter.com/${twitter}`}
-              >
-                Twitter
-              </a>
-            </li>
-          )}
           {github && (
             <li className={classes.item}>
               <a className={classes.link} href={github}>
@@ -57,6 +47,11 @@ const Header = ({ metadata = {}, noBlog = false }) => {
               <a className={classes.link} href={linkedin}>
                 LinkedIn
               </a>
+            </li>
+          )}
+          {twitter && (
+            <li className={classes.item}>
+              <a className={classes.link} href={pdf} target="blank" >Resume</a>
             </li>
           )}
           {!noBlog && (

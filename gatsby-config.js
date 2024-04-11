@@ -8,6 +8,8 @@ module.exports = {
     title: `Alex Santonastaso | Computer Scientist`,
     // Description that goes under your name in main bio
     description: `Computer Scientist based in London.`,
+    // Optional: Twitter account handle
+    author: `a`,
     // Optional: Github account URL
     github: `https://github.com/alex-s00`,
     // Optional: LinkedIn account URL
