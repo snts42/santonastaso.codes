@@ -9,7 +9,7 @@ module.exports = {
     // Description that goes under your name in main bio
     description: `Computer Scientist based in London.`,
     // Optional: Twitter account handle
-    author: `a`,
+    author: `Alex`,
     // Optional: Github account URL
     github: `https://github.com/alex-s00`,
     // Optional: LinkedIn account URL
@@ -36,6 +36,12 @@ module.exports = {
           'A Machine Learning pipeline that takes as input an audio file and predicts its song label',
         link: 'https://github.com/alex-s00/ml-mini-project',
       },
+      {
+        name: 'Web portfolio',
+        description:
+          'Personal portfolio built with React on GatsbyJS and TailwindCSS',
+        link: 'https://github.com/alex-s00/santonastaso.tech',
+      },
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
@@ -50,16 +56,16 @@ module.exports = {
       {
         name: 'Languages & Frameworks',
         description:
-          'JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP',
+          'Python, Java, C#, SQL, R, NumPy, Pandas, Pytorch, Tensorflow, PySpark, matplotlib',
       },
       {
-        name: 'Databases',
-        description: 'MongoDB, PostreSQL, MySQL',
+        name: 'Developer Tools',
+        description: 'Jupyter Notebook, VS Code, Git, MS Office, Google Cloud Platform, AWS',
       },
       {
         name: 'Other',
         description:
-          'Docker, Amazon Web Services (AWS), CI / CD, Microservices, API design, Agile / Scrum',
+          'Docker, CI / CD, API design, Agile / Scrum',
       },
     ],
   },
@@ -118,8 +124,8 @@ module.exports = {
         name: `devfolio`,
         short_name: `devfolio`,
         start_url: `/`,
-        background_color: `#de6825`,
-        theme_color: `#de6825`, // This color appears on mobile
+        background_color: `#009ae4`,
+        theme_color: `#009ae4`, // This color appears on mobile
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },
