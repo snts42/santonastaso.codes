@@ -15,7 +15,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+    about: `Tech enthusiast. With a Master's in Big Data Science and a Bachelor's in Computer science, I developed my skills in domains such as software development, deep learning, cloud computing. I'm also passionate about open-source contributions, working in high impact environments, and helping development teams grow and build great products.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
