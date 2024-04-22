@@ -15,7 +15,7 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     // Content of the About Me section
-    about: `Tech enthusiast. With a Master's in Big Data Science and a Bachelor's in Computer science, I developed my skills in domains such as software development, deep learning, cloud computing. I'm also passionate about open-source contributions, working in high impact environments, and helping development teams grow and build great products.`,
+    about: `With a Master's in Big Data Science and a Bachelor's in Computer science, I developed my skills in domains such as software development, deep learning, cloud computing. I'm also passionate about open-source contributions, working in high impact environments, and helping development teams grow and build great products.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
@@ -46,8 +46,13 @@ module.exports = {
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
+        name: 'HDS Consult srl',
+        description: 'Analyst, Apr 2023 - Apr 2024',
+        link: '',
+      },
+      {
         name: 'Queen Mary University of London',
-        description: 'Teaching Assistant, October 2023 - April 2024',
+        description: 'Teaching Assistant, October 2023 - Dec 2023',
         link: 'https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/big-data-science-msc/',
       },
     ],

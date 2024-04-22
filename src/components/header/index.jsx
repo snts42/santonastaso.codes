@@ -50,7 +50,7 @@ const Header = ({ metadata = {}, noBlog = false }) => {
           )}
           {twitter && (
             <li className={classes.item}>
-              <a className={classes.link} href="/Alex-Santonastaso-CV.pdf" target="blank">Resume</a>
+              <a className={classes.link} href="/Alex_Santonastaso_CV.pdf" target="blank">Resume</a>
             </li>
           )}
           {!noBlog && (
