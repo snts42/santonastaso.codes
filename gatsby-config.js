@@ -19,9 +19,9 @@ module.exports = {
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Facial emotion recognition',
+        name: 'Automated Facial Emotion Recognition',
         description:
-          'Kit to start a Deep Learning Model for facial emotion recognition',
+          'Build and deploy a Deep Learning Model for facial emotion recognition with PyTorch',
         link: 'https://github.com/alex-s00/Facial-emotion-recognition',
       },
       {
@@ -46,6 +46,11 @@ module.exports = {
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
+        name: 'National Careers Service',
+        description: 'Careers Adviser, Jun 2024 - Present',
+        link: 'https://nationalcareers.service.gov.uk/',
+      },
+      {
         name: 'HDS Consult srl',
         description: 'Analyst, Apr 2023 - Apr 2024',
         link: '',
@@ -61,16 +66,22 @@ module.exports = {
       {
         name: 'Languages & Frameworks',
         description:
-          'Python, Java, C#, SQL, R, NumPy, Pandas, Pytorch, Tensorflow, PySpark, matplotlib',
+          'Python, Java, C#, SQL, R, Pytorch, Tensorflow, PySpark',
       },
       {
         name: 'Developer Tools',
-        description: 'Jupyter Notebook, VS Code, Git, MS Office, Google Cloud Platform, AWS',
+        description: 'Jupyter Notebook, VS Code, Git, MS Office, AWS',
+      },
+    ],
+    certifications: [
+      {
+        name: 'AWS Certified Cloud Practitioner',
+        description:
+          'Oct 2024 - Present',
       },
       {
-        name: 'Other',
-        description:
-          'Docker, CI / CD, API design, Agile / Scrum',
+        name: 'NOCN Level 3 Award Information, Advice & Guidance',
+        description: 'Jul 2024 - Aug 2024',
       },
     ],
   },
