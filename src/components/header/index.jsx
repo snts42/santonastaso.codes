@@ -5,8 +5,8 @@ import profileImg from '../../images/profile.jpg';
 
 const classes = {
   wrapper: 'block mb-6 md:flex',
-  imageWrapper: 'w-full max-w-150',
-  image: 'rounded-full transform transition-all duration-150 hover:scale-105',
+  imageWrapper: 'relative w-full max-w-150 md:h-auto h-16 overflow-hidden', // Adjust height only for mobile
+  image:'absolute md:static bottom-0 w-full rounded-full transform transition-all duration-150 hover:scale-105', // Adjust position only for mobile
   contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20',
   name: 'text-4xl text-gray-900 font-bold leading-tight hover:text-black',
   description: 'text-gray-600',
@@ -50,7 +50,7 @@ const Header = ({ metadata = {}, noBlog = false }) => {
           )}
           {twitter && (
             <li className={classes.item}>
-              <a className={classes.link} href="/Alex_Santonastaso_CV.pdf" target="blank">Resume</a>
+              <a className={classes.link} href="/Alex Santonastaso CV.pdf" target="blank">Resume</a>
             </li>
           )}
           {!noBlog && (

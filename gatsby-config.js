@@ -51,37 +51,38 @@ module.exports = {
         link: 'https://nationalcareers.service.gov.uk/',
       },
       {
-        name: 'HDS Consult srl',
-        description: 'Analyst, Apr 2023 - Apr 2024',
+        name: 'HDS Consult Srl',
+        description: 'Business Analyst, Apr 2023 - Apr 2024',
         link: '',
       },
       {
         name: 'Queen Mary University of London',
-        description: 'Teaching Assistant, October 2023 - Dec 2023',
-        link: 'https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/big-data-science-msc/',
+        description: 'Teaching Assistant, Oct 2023 - Dec 2023',
+        link: 'https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/data-science-msc/',
       },
     ],
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
-        name: 'Languages & Frameworks',
+        name: 'Languages',
         description:
-          'Python, Java, C#, SQL, R, Pytorch, Tensorflow, PySpark',
+          'Python, Java, C#, SQL',
       },
       {
-        name: 'Developer Tools',
-        description: 'Jupyter Notebook, VS Code, Git, MS Office, AWS',
+        name: 'Tools & Frameworks',
+        description: 'Jupyter Notebook, VS Code, Git, AWS, NumPy, Pandas, Pytorch, Tensorflow, scikit-learn, Hadoop, Spark, matplotlib',
       },
     ],
     certifications: [
       {
         name: 'AWS Certified Cloud Practitioner',
-        description:
-          'Oct 2024 - Present',
+        description: 'Oct 2024 - Present',
+        link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/'
       },
       {
         name: 'NOCN Level 3 Award Information, Advice & Guidance',
         description: 'Jul 2024 - Aug 2024',
+        link: 'https://www.nocn.org.uk/products/qualifications/600-0723-0-nocn-level-3-award-in-information-advice-or-guidance/'
       },
     ],
   },

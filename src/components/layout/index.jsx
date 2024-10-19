@@ -1,7 +1,7 @@
 import React from 'react';
 
 const classes = {
-  wrapper: 'p-8 relative max-w-screen-xl xs:p-24',
+  wrapper: 'pt-0 px-8 pb-8 relative max-w-screen-xl xs:p-24', // Remove top padding on mobile, maintain side and bottom padding
   outerWrapper: 'relative',
   svg: 'hidden fixed transform right-0 top-5 z-0 xl:block',
 };
