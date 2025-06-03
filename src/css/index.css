@@ -1,3 +1,17 @@
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.45s cubic-bezier(0.4,0,0.2,1) both;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,22 +98,13 @@
 }
 
 @layer utilities {
-  @responsive {
-    .max-w-150 {
-      max-width: 150px;
-    }
-
-    .top-5 {
-      top: 5%;
-    }
+  .max-w-150 {
+    max-width: 150px;
+  }
+  .top-5 {
+    top: 5%;
   }
 }
-
-/**
- * atom-dark theme for `prism.js`
- * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
- * @author Joe Gibson (@gibsjose)
- */
 
 code[class*='language-'],
 pre[class*='language-'] {
@@ -249,3 +254,4 @@ pre[class*='language-'] {
   padding: 2px 5px !important;
   text-shadow: none !important;
 }
+

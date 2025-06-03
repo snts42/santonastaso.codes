@@ -1,88 +1,71 @@
 module.exports = {
   siteMetadata: {
-    // Site URL for when it goes live
-    siteUrl: `https://santonastaso.tech/`,
-    // Your Name
+    siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',
-    // Main Site Title
-    title: `Alex Santonastaso | Computer Scientist`,
-    // Description that goes under your name in main bio
-    description: `Computer Scientist based in London.`,
-    // Optional: Twitter account handle
+    title: `Alex Santonastaso | Developer Portfolio`,
+    description: `Powered by code, caffeine, and curiosity`,
     author: `Alex`,
-    // Optional: Github account URL
-    github: `https://github.com/alex-s00`,
-    // Optional: LinkedIn account URL
+    github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
-    // Content of the About Me section
-    about: `With a Master's in Big Data Science and a Bachelor's in Computer science, I developed my skills in domains such as software development, deep learning, cloud computing. I'm also passionate about open-source contributions, working in high impact environments, and helping development teams grow and build great products.`,
-    // Optional: List your projects, they must have `name` and `description`. `link` is optional.
+    resume: "/Alex-Santonastaso-CV.pdf",
+    about: `Software developer with a background in Big Data Science and Computer Science. Experienced in Python for automation, data analysis, and machine learning—including automation bots, blockchain data pipelines, and facial emotion recognition. I enjoy finding efficient solutions, learning new tech, and working collaboratively to deliver real results.`,
+    email: "alex@santonastaso.com",
+    phone: "+44 7570 280428",
     projects: [
       {
         name: 'Automated Facial Emotion Recognition',
-        description:
-          'Build and deploy a Deep Learning Model for facial emotion recognition with PyTorch',
-        link: 'https://github.com/alex-s00/Facial-emotion-recognition',
+        description: 'Deep learning model for facial emotion recognition using PyTorch',
+        link: 'https://github.com/snts42/Facial-emotion-recognition',
       },
       {
         name: 'Ethereum Blockchain Analysis',
-        description:
-          'Analysis of Ethereum Transactions and Smart Contracts using Apache Hadoop',
-        link: 'https://github.com/alex-s00/ethereum-analysis',
+        description: 'Analysis of Ethereum transactions and smart contracts at scale with Hadoop and PySpark',
+        link: 'https://github.com/snts42/ethereum-blockchain-analysis',
       },
       {
-        name: 'Audio classification using Machine Learning',
-        description:
-          'A Machine Learning pipeline that takes as input an audio file and predicts its song label',
-        link: 'https://github.com/alex-s00/ml-mini-project',
+        name: 'Audio Classification with Machine Learning',
+        description: 'Machine learning pipeline for audio classification using Python and scikit-learn',
+        link: 'https://github.com/snts42/audio-ml-classifier',
       },
       {
-        name: 'Web portfolio',
-        description:
-          'Personal portfolio built with React on GatsbyJS and TailwindCSS',
-        link: 'https://github.com/alex-s00/santonastaso.tech',
+        name: 'Portfolio Website',
+        description: 'Responsive portfolio site built with GatsbyJS, React, and TailwindCSS',
+        link: 'https://github.com/snts42/gatsby-portfolio-template',
       },
     ],
-    // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
         name: 'National Careers Service',
-        description: 'Careers Adviser, Jun 2024 - Present',
+        description: ' Administrator / Software Automation, Jun 2024 - Present',
         link: 'https://nationalcareers.service.gov.uk/',
       },
       {
-        name: 'HDS Consult Srl',
-        description: 'Business Analyst, Apr 2023 - Apr 2024',
-        link: '',
-      },
-      {
         name: 'Queen Mary University of London',
-        description: 'Teaching Assistant, Oct 2023 - Dec 2023',
-        link: 'https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/data-science-msc/',
+        description: 'Lab Demonstrator, Oct 2023 - Apr 2024',
+        link: 'https://www.qmul.ac.uk/',
       },
     ],
-    // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
-        name: 'Languages',
-        description:
-          'Python, Java, C#, SQL',
-      },
-      {
-        name: 'Tools & Frameworks',
-        description: 'Jupyter Notebook, VS Code, Git, AWS, NumPy, Pandas, Pytorch, Tensorflow, scikit-learn, Hadoop, Spark, matplotlib',
+        name: 'Key Skills',
+        description: 'Python, Java, SQL, React, Git, Data Analysis, Machine Learning, APIs, AWS, Docker',
       },
     ],
     certifications: [
       {
         name: 'AWS Certified Cloud Practitioner',
-        description: 'Oct 2024 - Present',
-        link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/'
+        description: 'In progress, June 2025 – Present',
+        link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
       },
       {
-        name: 'NOCN Level 3 Award Information, Advice & Guidance',
-        description: 'Jul 2024 - Aug 2024',
-        link: 'https://www.nocn.org.uk/products/qualifications/600-0723-0-nocn-level-3-award-in-information-advice-or-guidance/'
+        name: 'GitHub Foundations Certification',
+        description: 'In progress, June 2025 – Present',
+        link: 'https://education.github.com/experiences/foundations_certificate', 
+      },
+      {
+        name: 'NOCN Level 3 Award in Information, Advice & Guidance',
+        description: '',
+        link: 'https://www.nocn.org.uk/products/qualifications/600-0723-0-nocn-level-3-award-in-information-advice-or-guidance/',
       },
     ],
   },
@@ -95,57 +78,31 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              wrapperStyle: `margin: 0 0 30px;`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-feed`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `ADD YOUR TRACKING ID HERE`, // Optional Google Analytics
+        trackingIds: [
+          "G-2DED0V7CD4", // Your GA4 Measurement ID
+        ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `devfolio`,
-        short_name: `devfolio`,
+        name: `Alex Santonastaso`,
+        short_name: `snts42`,
         start_url: `/`,
-        background_color: `#009ae4`,
-        theme_color: `#009ae4`, // This color appears on mobile
+        background_color: `#ffffff`,
+        theme_color: `#009ae4`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },
     },
   ],
-};
+}

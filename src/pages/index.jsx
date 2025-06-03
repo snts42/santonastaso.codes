@@ -1,93 +1,67 @@
-import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import Header from '../components/header';
 import Layout from '../components/layout';
+import Header from '../components/header';
 import SectionAbout from '../components/section-about';
-import SectionBlog from '../components/section-blog';
-import SectionExperience from '../components/section-experience';
 import SectionProjects from '../components/section-projects';
+import SectionExperience from '../components/section-experience';
 import SectionSkills from '../components/section-skills';
 import SectionCertifications from '../components/section-certifications';
-import SEO from '../components/seo';
+import SectionContact from '../components/section-contact';
+import Seo from '../components/Seo';
 
-const Index = ({ data }) => {
-  const about = get(data, 'site.siteMetadata.about', false);
-  const projects = get(data, 'site.siteMetadata.projects', false);
-  const posts = data.allMarkdownRemark.edges;
-  const experience = get(data, 'site.siteMetadata.experience', false);
-  const skills = get(data, 'site.siteMetadata.skills', false);
-  const certifications = get(data, 'site.siteMetadata.certifications', false);
-  const noBlog = !posts || !posts.length;
+const IndexPage = () => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          name
+          description
+          github
+          linkedin
+          resume
+          about
+          email
+          phone
+          projects {
+            name
+            description
+            link
+          }
+          experience {
+            name
+            description
+            link
+          }
+          skills {
+            name
+            description
+          }
+          certifications {
+            name
+            description
+            link
+          }
+        }
+      }
+    }
+  `);
+
+  const metadata = site.siteMetadata;
 
   return (
     <Layout>
-      <SEO />
-      <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
-      {about && <SectionAbout about={about} />}
-      {projects && projects.length && <SectionProjects projects={projects} />}
-      {!noBlog && <SectionBlog posts={posts} />}
-      {experience && experience.length && (
-        <SectionExperience experience={experience} />
-      )}
-      {skills && skills.length && <SectionSkills skills={skills} />}
-      {certifications && certifications.length && <SectionCertifications certifications={certifications} />}
+      <Seo title="" />
+      <Header metadata={metadata} />
+      <SectionAbout about={metadata.about} />
+      <SectionProjects projects={metadata.projects} />
+      <SectionExperience experience={metadata.experience} />
+      <SectionSkills skills={metadata.skills} />
+      <SectionCertifications certifications={metadata.certifications} />
+      <SectionContact email={metadata.email} phone={metadata.phone} />
     </Layout>
   );
 };
 
-export default Index;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        name
-        title
-        description
-        about
-        author
-        github
-        linkedin
-        projects {
-          name
-          description
-          link
-        }
-        experience {
-          name
-          description
-          link
-        }
-        skills {
-          name
-          description
-        }
-        certifications {
-          name
-          description
-          link
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`;
+export default IndexPage;

@@ -1,32 +1,28 @@
 import { Link } from 'gatsby';
-import get from 'lodash/get';
 import React from 'react';
 import profileImg from '../../images/profile.jpg';
 
 const classes = {
-  wrapper: 'block mb-6 md:flex',
-  imageWrapper: 'relative w-full max-w-150 md:h-auto h-16 overflow-hidden', // Adjust height only for mobile
-  image:'absolute md:static bottom-0 w-full rounded-full transform transition-all duration-150 hover:scale-105', // Adjust position only for mobile
-  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20',
-  name: 'text-4xl text-gray-900 font-bold leading-tight hover:text-black',
-  description: 'text-gray-600',
+  wrapper: 'block mb-6 md:flex pt-0',
+  imageWrapper: 'relative w-full max-w-150 md:h-auto h-16 overflow-hidden md:mt-0',
+  image: 'absolute md:static bottom-0 w-full rounded-full transition-shadow duration-300',
+  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 animate-fade-in-up',
+  name: 'text-4xl text-gray-900 dark:text-gray-100 font-bold leading-tight hover:text-black dark:hover:text-white',
+  description: 'text-gray-600 dark:text-gray-400',
   list: 'mt-6 uppercase tracking-wider',
   item: 'inline list-none pr-4',
-  link:
-    'inline-block py-2 font-semibold text-xs text-gray-600 hover:text-black',
+  link: 'inline-block py-2 font-semibold text-xs text-gray-600 dark:text-gray-400 transition-colors duration-150 hover:text-primary dark:hover:text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary',
 };
 
-const Header = ({ metadata = {}, noBlog = false }) => {
-  const twitter = get(metadata, 'author', false);
-  const github = get(metadata, 'github', false);
-  const linkedin = get(metadata, 'linkedin', false);
+const Header = ({ metadata = {} }) => {
+  const github = metadata.github;
+  const linkedin = metadata.linkedin;
+  const resume = metadata.resume;
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.imageWrapper}>
-        <Link to="/">
-          <img className={classes.image} src={profileImg} alt={metadata.name} />
-        </Link>
+        <img className={classes.image} src={profileImg} alt={metadata.name} />
       </div>
       <div className={classes.contentWrapper}>
         <h1 className={classes.name}>
@@ -48,16 +44,11 @@ const Header = ({ metadata = {}, noBlog = false }) => {
               </a>
             </li>
           )}
-          {twitter && (
+          {resume && (
             <li className={classes.item}>
-              <a className={classes.link} href="/Alex Santonastaso CV.pdf" target="blank">Resume</a>
-            </li>
-          )}
-          {!noBlog && (
-            <li className={classes.item}>
-              <Link className={classes.link} to="/blog">
-                Blog
-              </Link>
+              <a className={classes.link} href={resume} target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
             </li>
           )}
         </ul>

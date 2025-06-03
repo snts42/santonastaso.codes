@@ -8,14 +8,14 @@ const SectionExperience = ({ experience }) => {
 
   return (
     <Section title="Experience">
-      {experience.map((item) => (
-        <SummaryItem
-          key={item.name}
-          name={item.name}
-          description={item.description}
-          link={item.link}
-        />
-      ))}
+      {experience.filter(Boolean).map((item) => (
+      <SummaryItem
+    key={item.name}
+    name={item.name}
+    description={item.description}
+    link={item.link}
+  />
+))}
     </Section>
   );
 };
