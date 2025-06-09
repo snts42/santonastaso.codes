@@ -8,14 +8,14 @@ module.exports = {
     github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     resume: "/Alex-Santonastaso-CV.pdf",
-    about: `Software developer with a background in Big Data Science and Computer Science. Experienced in Python for automation, data analysis, and machine learning—including automation bots, blockchain data pipelines, and facial emotion recognition. I enjoy finding efficient solutions, learning new tech, and working collaboratively to deliver real results.`,
+    about: `Software developer with a background in Big Data Science and Computer Science. Experienced in Python for automation, data analysis, and machine learning—including automation bots, blockchain data pipelines, and facial emotion recognition. I enjoy finding efficient solutions, learning new tech, and working collaboratively to contribute to great products and services.`,
     email: "alex@santonastaso.com",
     phone: "+44 7570 280428",
     projects: [
       {
         name: 'Automated Facial Emotion Recognition',
-        description: 'Deep learning model for facial emotion recognition using PyTorch',
-        link: 'https://github.com/snts42/Facial-emotion-recognition',
+        description: 'Deep learning pipeline for facial emotion recognition, benchmarked for robustness to image blur',
+        link: 'https://github.com/snts42/facial-emotion-recognition',
       },
       {
         name: 'Ethereum Blockchain Analysis',
