@@ -54,13 +54,13 @@ module.exports = {
     certifications: [
       {
         name: 'AWS Certified Cloud Practitioner',
-        description: 'In progress, June 2025 – Present',
+        description: 'In progress, Jun 2025 – Present',
         link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
       },
       {
         name: 'GitHub Foundations Certification',
-        description: 'In progress, June 2025 – Present',
-        link: 'https://education.github.com/experiences/foundations_certificate', 
+        description: 'Jun 2025',
+        link: 'https://www.credly.com/badges/a118c3e7-f2b4-4da2-91d4-60750ff091db/linked_in?t=sy0qai', 
       },
       {
         name: 'NOCN Level 3 Award in Information, Advice & Guidance',
