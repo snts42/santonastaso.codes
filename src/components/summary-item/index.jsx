@@ -16,7 +16,7 @@ const SummaryItem = ({ name, description, link }) => (
         name
       )}
     </h3>
-    <p className="text-base text-gray-600 dark:text-gray-300">{description}</p>
+    <p className="text-base text-gray-600 dark:text-gray-400">{description}</p>
   </div>
 );
 
