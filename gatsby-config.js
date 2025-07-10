@@ -8,10 +8,15 @@ module.exports = {
     github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     resume: "/Alex-Santonastaso-CV.pdf",
-    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in Python for automation, data analysis, and machine learning—including automation tools, blockchain data pipelines, and facial emotion recognition. I enjoy finding efficient solutions, learning new tech, and working collaboratively to contribute to great products and services.`,
+    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, data pipelines, and machine learning models using Python. I have a good understanding of APIs and cloud services, and I’m quick to learn new technologies on the job. I enjoy solving real world problems through efficient, maintainable code and collaborating to build great products and services.`,
     email: "alex@santonastaso.com",
     phone: "+44 7570 280428",
     projects: [
+      {
+        name: 'Evolve Results Automation',
+        description: 'Automates the retrieval and export of candidate results from the City & Guilds Evolve platform using Python',
+        link: 'https://github.com/snts42/evolve-results-automation',
+      },
       {
         name: 'Automated Facial Emotion Recognition',
         description: 'Deep learning pipeline for facial emotion recognition, benchmarked for robustness to image blur',
@@ -19,8 +24,13 @@ module.exports = {
       },
       {
         name: 'Ethereum Blockchain Analysis',
-        description: 'Analysis of Ethereum transactions and smart contracts at scale with Hadoop and PySpark',
+        description: 'Big data analysis of Ethereum transactions and smart contracts at scale with Hadoop and PySpark',
         link: 'https://github.com/snts42/ethereum-blockchain-analysis',
+      },
+      {
+        name: 'XMRig-Zero',
+        description: 'CD pipeline that builds zero-fee XMRig binaries for Windows, Linux, and macOS using GitHub Actions',
+        link: 'https://github.com/snts42/xmrig-zero',
       },
       {
         name: 'Audio Classification with Machine Learning',
@@ -30,13 +40,13 @@ module.exports = {
       {
         name: 'Portfolio Website',
         description: 'Responsive portfolio site built with GatsbyJS, React, and TailwindCSS',
-        link: 'https://github.com/snts42/gatsby-portfolio-template',
+        link: 'https://github.com/snts42/santonastaso.codes',
       },
     ],
     experience: [
       {
         name: 'National Careers Service',
-        description: ' Administrator / Software Automation, Jun 2024 - Present',
+        description: 'Python Automation Engineer, Jun 2024 - Present',
         link: 'https://nationalcareers.service.gov.uk/',
       },
       {
@@ -47,14 +57,26 @@ module.exports = {
     ],
     skills: [
       {
-        name: 'Key Skills',
-        description: 'Python, Java, SQL, React, Git, Data Analysis, Machine Learning, APIs, AWS, Docker',
+        name: 'Languages & Tools',
+        description: 'Python, Java, SQL, Git',
+      },
+      {
+        name: 'Backend & Automation',
+        description: 'Selenium, OpenPyXL, Pandas, REST APIs, Email Automation (SMTP)',
+      },
+      {
+        name: 'Web & Frontend',
+        description: 'React, HTML, CSS',
+      },
+      {
+        name: 'Cloud & DevOps',
+        description: 'GitHub Actions, Docker, AWS',
       },
     ],
     certifications: [
       {
         name: 'AWS Certified Cloud Practitioner',
-        description: 'In progress, Jun 2025 – Present',
+        description: 'In progress',
         link: 'https://aws.amazon.com/certification/certified-cloud-practitioner/',
       },
       {
@@ -66,11 +88,6 @@ module.exports = {
         name: 'Scrum Fundamentals Certified',
         description: 'Jun 2025',
         link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=1085847', 
-      },
-      {
-        name: 'NOCN Level 3 Award in Information, Advice & Guidance',
-        description: '',
-        link: 'https://www.nocn.org.uk/products/qualifications/600-0723-0-nocn-level-3-award-in-information-advice-or-guidance/',
       },
     ],
   },
