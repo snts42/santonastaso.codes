@@ -32,8 +32,8 @@ const Layout = ({ children }) => {
       <div className="bg-noise" />
       {/* Content container */}
       <main className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 pt-0 md:pt-12 pb-12 max-w-6xl
-        bg-white/60 backdrop-blur-md border border-cyan-400 shadow-[0_0_32px_4px_rgba(0,255,255,0.18)] ring-1 ring-cyan-300/30 md:rounded-3xl
-        dark:bg-[#232b36]/80 dark:backdrop-blur-lg dark:border-cyan-400 dark:shadow-[0_0_32px_4px_rgba(0,255,255,0.10)]
+        bg-white/60 backdrop-blur-md md:border md:border-cyan-400 md:shadow-[0_0_32px_4px_rgba(0,255,255,0.18)] md:ring-1 md:ring-cyan-300/30 md:rounded-3xl
+        dark:bg-[#232b36]/80 dark:backdrop-blur-lg dark:md:border-cyan-400 dark:md:shadow-[0_0_32px_4px_rgba(0,255,255,0.10)]
       ">
         {children}
       </main>
