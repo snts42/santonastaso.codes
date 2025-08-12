@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
-import Header from '../components/header';
+import Header from '../components/Header';
 import SectionAbout from '../components/section-about';
 import SectionProjects from '../components/section-projects';
 import SectionExperience from '../components/section-experience';

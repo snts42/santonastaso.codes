@@ -5,7 +5,7 @@ import SummaryItem from '../summary-item';
 
 const SectionSkills = ({ skills }) => {
   return (
-    <Section title="Skills">
+    <Section title="Skills" titleDelay="animate-fade-in-up-delay-300" contentDelay="animate-fade-in-up-delay-300">
       {skills.map((skill) => (
         <SummaryItem
           key={skill.name}

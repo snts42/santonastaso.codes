@@ -7,7 +7,7 @@ const SectionProjects = ({ projects }) => {
   if (!projects.length) return null;
 
   return (
-    <Section title="Projects">
+    <Section title="Projects" titleDelay="animate-fade-in-up-delay-200" contentDelay="animate-fade-in-up-delay-300">
       {projects.map((project) => (
         <SummaryItem
           key={project.name}

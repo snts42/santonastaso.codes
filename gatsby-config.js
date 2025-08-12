@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',
-    title: `Alex Santonastaso | Developer Portfolio`,
+    title: `Alex Santonastaso - Developer Portfolio`,
     description: `Powered by code, caffeine, and curiosity`,
     author: `Alex`,
     github: `https://github.com/snts42`,
@@ -117,11 +117,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alex Santonastaso`,
-        short_name: `snts42`,
+        name: `Alex Santonastaso - Developer Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#009ae4`,
+        theme_color: `#06b6d4`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },

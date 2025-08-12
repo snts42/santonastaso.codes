@@ -12,6 +12,10 @@ module.exports = {
       colors: {
         primary: '#009ae4',
       },
+      fontFamily: {
+        'display': ['Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'monospace'],
+      },
     },
   },
   plugins: [],
