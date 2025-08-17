@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import Header from '../components/Header';
 import Section from '../components/section';
-import Seo from '../components/SEO';
+import Seo from '../components/Seo';
 
 export default function NotFoundPage() {
   const { site } = useStaticQuery(graphql`

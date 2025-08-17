@@ -1,4 +1,10 @@
+const adapter = require("gatsby-adapter-netlify").default
+
 module.exports = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  }),
   siteMetadata: {
     siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',

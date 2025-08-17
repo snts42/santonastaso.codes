@@ -9,7 +9,7 @@ import SectionExperience from '../components/section-experience';
 import SectionSkills from '../components/section-skills';
 import SectionCertifications from '../components/section-certifications';
 import SectionContact from '../components/section-contact';
-import Seo from '../components/SEO';
+import Seo from '../components/Seo';
 
 const IndexPage = () => {
   const { site } = useStaticQuery(graphql`
