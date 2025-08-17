@@ -68,7 +68,7 @@ export default IndexPage;
 // Gatsby Head API function for SEO
 export function Head() {
   return (
-    <SEO 
+    <Seo 
       title="Developer Portfolio"
       description="Software Engineer with expertise in Python automation, web development, and data science. Showcasing projects and experience in modern technologies."
       keywords="Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby"

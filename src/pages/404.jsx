@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import Header from '../components/Header';
 import Section from '../components/section';
-import SEO from '../components/SEO';
+import Seo from '../components/SEO';
 
 export default function NotFoundPage() {
   const { site } = useStaticQuery(graphql`
@@ -47,7 +47,7 @@ export default function NotFoundPage() {
 // Gatsby Head API function for SEO
 export function Head() {
   return (
-    <SEO 
+    <Seo 
       title="Page Not Found" 
       description="The requested page could not be found. Return to Alex Santonastaso's developer portfolio homepage."
       pathname="/404/"
