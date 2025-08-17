@@ -4,11 +4,12 @@ module.exports = {
     name: 'Alex Santonastaso',
     title: `Alex Santonastaso - Developer Portfolio`,
     description: `Powered by code, caffeine, and curiosity`,
-    author: `Alex`,
+    author: `Alex Santonastaso`,
+    keywords: `Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science`,
     github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     resume: "/Alex-Santonastaso-CV.pdf",
-    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, data pipelines, and machine learning models using Python. I have a good understanding of APIs and cloud services, and I’m quick to learn new technologies on the job. I enjoy solving real world problems through efficient, maintainable code and collaborating to build great products and services.`,
+    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, data pipelines, and machine learning models using Python. I have a good understanding of APIs and cloud services, and I'm quick to learn new technologies on the job. I enjoy solving real world problems through efficient, maintainable code and collaborating to build great products and services.`,
     email: "alex@santonastaso.com",
     phone: "+44 7570 280428",
     projects: [
@@ -92,7 +93,7 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -104,13 +105,74 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/404/`, `/404.html`, `/dev-404-page/`],
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages.map(page => {
+            return { ...page }
+          })
+        },
+        serialize: ({ path, modifiedGmt }) => {
+          // Set priority based on path
+          let priority = 0.5;
+          let changefreq = 'monthly';
+          
+          if (path === '/') {
+            priority = 1.0;
+            changefreq = 'weekly';
+          }
+          
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+            priority: priority,
+            changefreq: changefreq,
+          }
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://santonastaso.codes`,
+        sitemap: `https://santonastaso.codes/sitemap-index.xml`,
+        policy: [
+          {
+            userAgent: `*`,
+            allow: `/`,
+            disallow: [`/404/`],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          "G-2DED0V7CD4", // Your GA4 Measurement ID
+          "G-2DED0V7CD4", // Google Analytics 4 property ID
         ],
         pluginConfig: {
-          head: true,
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          delayOnRouteUpdate: 0,
         },
       },
     },
@@ -124,6 +186,9 @@ module.exports = {
         theme_color: `#06b6d4`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
+        // Disable icon in social media sharing
+        include_favicon: false,
+        legacy: false,
       },
     },
   ],

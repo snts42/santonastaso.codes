@@ -9,7 +9,7 @@ import SectionExperience from '../components/section-experience';
 import SectionSkills from '../components/section-skills';
 import SectionCertifications from '../components/section-certifications';
 import SectionContact from '../components/section-contact';
-import Seo from '../components/Seo';
+import Seo from '../components/SEO';
 
 const IndexPage = () => {
   const { site } = useStaticQuery(graphql`
@@ -52,7 +52,6 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="" />
       <Header metadata={metadata} />
       <SectionAbout about={metadata.about} />
       <SectionProjects projects={metadata.projects} />
@@ -65,3 +64,15 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+// Gatsby Head API function for SEO
+export function Head() {
+  return (
+    <SEO 
+      title="Developer Portfolio"
+      description="Software Engineer with expertise in Python automation, web development, and data science. Showcasing projects and experience in modern technologies."
+      keywords="Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby"
+      pathname="/"
+    />
+  );
+}

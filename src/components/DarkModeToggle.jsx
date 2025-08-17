@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-const getSystemTheme = () =>
-  typeof window !== "undefined" && window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
-
 const getInitialTheme = () => {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return true; // Default to dark for SSR
   const stored = window.localStorage.getItem("theme");
   if (stored === "dark") return true;
   if (stored === "light") return false;
-  return getSystemTheme();
+  return true; // Default to dark when no preference is set
 };
 
 const DarkModeToggle = ({ mobile = false }) => {

@@ -1,49 +1,119 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
-function Seo({ description = '', lang = 'en', meta = [], title }) {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
+const Seo = ({ title, description, pathname, keywords, image }) => {
+  const metadata = useSiteMetadata();
+
+  // Determine the appropriate title and description
+  const seoTitle = title ? `${title} - ${metadata.author}` : metadata.title;
+  const seoDescription = description || metadata.description;
+  const seoKeywords = keywords || "Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science";
+
+  const seo = {
+    title: seoTitle,
+    description: seoDescription,
+    keywords: seoKeywords,
+    url: `${metadata.siteUrl}${pathname || ``}`,
+    image: image || `${metadata.siteUrl}/static/icon.png`,
+  };
+
+  // Structured data for the organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": metadata.author,
+    "url": metadata.siteUrl,
+    "sameAs": [
+      metadata.github,
+      metadata.linkedin,
+    ]
+  };
+
+  // Structured data for the website
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": metadata.title,
+    "url": metadata.siteUrl,
+    "description": metadata.description,
+    "author": {
+      "@type": "Person",
+      "name": metadata.author
     }
-  `);
+  };
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
-  const finalTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+  // Structured data for portfolio (if on homepage)
+  const portfolioSchema = !pathname || pathname === '/' ? {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": `${metadata.author} - Developer Portfolio`,
+    "description": metadata.description,
+    "url": metadata.siteUrl,
+    "mainEntity": {
+      "@type": "Person",
+      "name": metadata.author,
+      "jobTitle": "Software Engineer",
+      "url": metadata.siteUrl,
+      "sameAs": [
+        metadata.github,
+        metadata.linkedin
+      ]
+    }
+  } : null;
 
   return (
-    <Helmet
-      htmlAttributes={{ lang }}
-      title={finalTitle}
-      meta={[
-        { name: `description`, content: metaDescription },
-        { property: `og:title`, content: finalTitle },
-        { property: `og:description`, content: metaDescription },
-        { property: `og:type`, content: `website` },
-        { name: `twitter:card`, content: `summary` },
-        { name: `twitter:creator`, content: site.siteMetadata?.author || '' },
-        { name: `twitter:title`, content: finalTitle },
-        { name: `twitter:description`, content: metaDescription },
-        ...meta,
-      ]}
-    />
+    <>
+      {/* Basic Meta Tags */}
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="keywords" content={seo.keywords} />
+      <meta name="author" content={metadata.author} />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={seo.url} />
+      
+      {/* Language and Locale */}
+      <html lang="en" />
+      <meta name="language" content="English" />
+      
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:site_name" content={metadata.title} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      
+      {/* Additional SEO Tags */}
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+      {portfolioSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(portfolioSchema)}
+        </script>
+      )}
+    </>
   );
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
 };
 
 export default Seo;

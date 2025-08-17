@@ -82,7 +82,7 @@
     margin: 0;
     padding: 0;
     /* Set initial background to prevent flash - matches dark mode background */
-    background: #0a0f1a;
+    background: #181f29;
   }
   
   /* Ensure light mode gets the right initial background if needed */
