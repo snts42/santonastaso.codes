@@ -14,7 +14,7 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
     description: seoDescription,
     keywords: seoKeywords,
     url: `${metadata.siteUrl}${pathname || ``}`,
-    image: image || `${metadata.siteUrl}/static/icon.png`,
+    // No image for social media sharing
   };
 
   // Structured data for the organization
@@ -84,16 +84,12 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={metadata.title} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
       
       {/* Additional SEO Tags */}
       <meta name="theme-color" content="#06b6d4" />

@@ -192,8 +192,6 @@ module.exports = {
         theme_color: `#06b6d4`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
-        // Disable icon in social media sharing
-        include_favicon: false,
         legacy: false,
       },
     },
