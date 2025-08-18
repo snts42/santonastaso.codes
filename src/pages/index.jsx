@@ -28,6 +28,7 @@ const IndexPage = () => {
             name
             description
             link
+            featured
           }
           experience {
             name

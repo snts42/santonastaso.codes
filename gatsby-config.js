@@ -15,10 +15,16 @@ module.exports = {
     github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     resume: "/Alex-Santonastaso-CV.pdf",
-    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, data pipelines, and machine learning models using Python. I have a good understanding of APIs and cloud services, and I'm quick to learn new technologies on the job. I enjoy solving real world problems through efficient, maintainable code and collaborating to build great products and services.`,
+    about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, web applications, and cloud infrastructure using Python and modern frameworks. I have a strong understanding of APIs, cloud services, and DevOps practices. I enjoy solving real world problems through efficient, maintainable code.`,
     email: "alex@santonastaso.com",
     phone: "+44 7570 280428",
     projects: [
+      {
+        name: 'Secure File Sharing',
+        description: 'Full-stack web application built with FastAPI, Gatsby, AWS, and Terraform',
+        link: 'https://files.santonastaso.codes',
+        featured: true,
+      },
       {
         name: 'Evolve Results Automation',
         description: 'Automates the retrieval and export of candidate results from the City & Guilds Evolve platform using Python',
@@ -30,19 +36,9 @@ module.exports = {
         link: 'https://github.com/snts42/facial-emotion-recognition',
       },
       {
-        name: 'Ethereum Blockchain Analysis',
-        description: 'Big data analysis of Ethereum transactions and smart contracts at scale with Hadoop and PySpark',
-        link: 'https://github.com/snts42/ethereum-blockchain-analysis',
-      },
-      {
         name: 'XMRig-Zero',
         description: 'CD pipeline that builds zero-fee XMRig binaries for Windows, Linux, and macOS using GitHub Actions',
         link: 'https://github.com/snts42/xmrig-zero',
-      },
-      {
-        name: 'Audio Classification with Machine Learning',
-        description: 'Machine learning pipeline for audio classification using Python and scikit-learn',
-        link: 'https://github.com/snts42/audio-ml-classifier',
       },
       {
         name: 'Portfolio Website',
@@ -65,19 +61,19 @@ module.exports = {
     skills: [
       {
         name: 'Languages & Tools',
-        description: 'Python, Java, SQL, Git',
+        description: 'Python, JavaScript, Java, SQL, Git',
       },
       {
-        name: 'Backend & Automation',
-        description: 'Selenium, OpenPyXL, Pandas, REST APIs, Email Automation (SMTP)',
+        name: 'Backend & APIs',
+        description: 'FastAPI, REST, Selenium, OpenPyXL, Pandas, Email Automation',
       },
       {
-        name: 'Web & Frontend',
-        description: 'React, HTML, CSS',
+        name: 'Frontend & Web',
+        description: 'React, Gatsby, HTML, CSS, TailwindCSS',
       },
       {
-        name: 'Cloud & DevOps',
-        description: 'GitHub Actions, Docker, AWS',
+        name: 'Cloud & Infrastructure',
+        description: 'AWS, Terraform, GitHub Actions, Docker, CI/CD',
       },
     ],
     certifications: [
