@@ -14,7 +14,7 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
     description: seoDescription,
     keywords: seoKeywords,
     url: `${metadata.siteUrl}${pathname || ``}`,
-    // No image for social media sharing
+    image: null, // Explicitly set to null to remove social media images
   };
 
   // Structured data for the organization

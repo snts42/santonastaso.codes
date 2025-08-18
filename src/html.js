@@ -33,7 +33,7 @@ export default function HTML(props) {
         <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card meta tags */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Alex Santonastaso - Developer Portfolio" />
         <meta name="twitter:description" content="Powered by code, caffeine, and curiosity" />
         
