@@ -85,7 +85,7 @@ const DarkModeToggle = ({ mobile = false }) => {
         rounded-full shadow-lg hover:shadow-cyan-400/30 p-3
         transition-all duration-150
         hover:scale-105 active:scale-95
-        focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2
+        focus:outline-none focus:ring-2 focus:ring-cyan-400
         group relative overflow-hidden
       "
       onClick={() => setDark(!dark)}

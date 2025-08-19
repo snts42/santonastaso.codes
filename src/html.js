@@ -14,7 +14,7 @@ export default function HTML(props) {
         
         {/* Default meta tags for social media previews and SEO */}
         <title>Alex Santonastaso - Developer Portfolio</title>
-        <meta name="description" content="Powered by code, caffeine, and curiosity" />
+        <meta name="description" content="Software Developer from London" />
         <meta name="keywords" content="Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby" />
         <meta name="author" content="Alex Santonastaso" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -26,7 +26,7 @@ export default function HTML(props) {
         
         {/* Open Graph meta tags */}
         <meta property="og:title" content="Alex Santonastaso - Developer Portfolio" />
-        <meta property="og:description" content="Powered by code, caffeine, and curiosity" />
+        <meta property="og:description" content="Software Developer from London" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://santonastaso.codes" />
         <meta property="og:site_name" content="Alex Santonastaso - Developer Portfolio" />
@@ -35,7 +35,7 @@ export default function HTML(props) {
         {/* Twitter Card meta tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Alex Santonastaso - Developer Portfolio" />
-        <meta name="twitter:description" content="Powered by code, caffeine, and curiosity" />
+        <meta name="twitter:description" content="Software Developer from London" />
         
         {/* Additional SEO meta tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />

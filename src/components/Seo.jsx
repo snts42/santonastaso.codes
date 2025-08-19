@@ -14,7 +14,7 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
     description: seoDescription,
     keywords: seoKeywords,
     url: `${metadata.siteUrl}${pathname || ``}`,
-    image: null, // Explicitly set to null to remove social media images
+    image: null, 
   };
 
   // Structured data for the organization
@@ -45,19 +45,27 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
   // Structured data for portfolio (if on homepage)
   const portfolioSchema = !pathname || pathname === '/' ? {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "name": `${metadata.author} - Developer Portfolio`,
+    "@type": "Person",
+    "name": metadata.author,
+    "jobTitle": "Software Engineer",
     "description": metadata.description,
     "url": metadata.siteUrl,
-    "mainEntity": {
-      "@type": "Person",
-      "name": metadata.author,
-      "jobTitle": "Software Engineer",
-      "url": metadata.siteUrl,
-      "sameAs": [
-        metadata.github,
-        metadata.linkedin
-      ]
+    "image": `${metadata.siteUrl}/android-chrome-512x512.png`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    },
+    "alumniOf": "Queen Mary University of London",
+    "knowsAbout": ["Python", "React", "Gatsby", "Web Development", "Automation", "Data Science", "Computer Science"],
+    "sameAs": [
+      metadata.github,
+      metadata.linkedin,
+      metadata.siteUrl
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Software Engineer"
     }
   } : null;
 

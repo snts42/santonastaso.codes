@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',
     title: `Alex Santonastaso - Developer Portfolio`,
-    description: `Powered by code, caffeine, and curiosity`,
+    description: `Software Developer from London`,
     author: `Alex Santonastaso`,
     keywords: `Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science`,
     github: `https://github.com/snts42`,
@@ -26,18 +26,18 @@ module.exports = {
         featured: true,
       },
       {
-        name: 'Evolve Results Automation',
-        description: 'Automates the retrieval and export of candidate results from the City & Guilds Evolve platform using Python',
+        name: 'E-volve Results Automation',
+        description: 'Automates the retrieval and export of exam results using Python',
         link: 'https://github.com/snts42/evolve-results-automation',
       },
       {
         name: 'Automated Facial Emotion Recognition',
-        description: 'Deep learning pipeline for facial emotion recognition, benchmarked for robustness to image blur',
+        description: 'Deep learning pipeline benchmarked for robustness to image blur',
         link: 'https://github.com/snts42/facial-emotion-recognition',
       },
       {
         name: 'XMRig-Zero',
-        description: 'CD pipeline that builds zero-fee XMRig binaries for Windows, Linux, and macOS using GitHub Actions',
+        description: 'CD pipeline that builds zero-fee XMRig binaries using GitHub Actions',
         link: 'https://github.com/snts42/xmrig-zero',
       },
       {
@@ -49,7 +49,7 @@ module.exports = {
     experience: [
       {
         name: 'National Careers Service',
-        description: 'Python Automation Engineer, Jun 2024 - Present',
+        description: 'Software Developer, Jun 2024 - Present',
         link: 'https://nationalcareers.service.gov.uk/',
       },
       {

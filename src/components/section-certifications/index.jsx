@@ -12,6 +12,7 @@ const SectionCertifications = ({ certifications }) => {
           name={certification.name}
           description={certification.description}
           link={certification.link}
+          type="certification"
         />
       ))}
     </Section>
