@@ -71,7 +71,6 @@ export function Head() {
   return (
     <Seo 
       title="Software Engineer"
-      description="Software Engineer specialising in Python, cloud infrastructure (AWS/Terraform), and full-stack web development. Currently building tools at the National Careers Service (UK Gov)."
       pathname="/"
     />
   );

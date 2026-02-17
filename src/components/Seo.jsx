@@ -9,9 +9,13 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
   const seoDescription = description || metadata.description;
   const seoKeywords = keywords || metadata.keywords || "Alex Santonastaso, software engineer, developer, portfolio";
 
+  // Use a cleaner description for social previews
+  const ogDescription = description || 'Software Engineer based in London. Portfolio and projects.';
+
   const seo = {
     title: seoTitle,
     description: seoDescription,
+    ogDescription,
     keywords: seoKeywords,
     url: `${metadata.siteUrl}${pathname || ``}`,
     image: `${metadata.siteUrl.replace(/\/$/, '')}/og-image.png`,
@@ -101,7 +105,7 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
+      <meta property="og:description" content={seo.ogDescription} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={metadata.title} />
       <meta property="og:locale" content="en_GB" />
@@ -114,7 +118,7 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
       {/* Twitter Card */}
       <meta name="twitter:card" content={seo.image ? "summary_large_image" : "summary"} />
       <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:description" content={seo.ogDescription} />
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       
       {/* Additional SEO Tags */}
