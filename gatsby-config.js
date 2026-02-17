@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',
     title: `Alex Santonastaso - Software Engineer`,
-    description: `Software Engineer · Python · Cloud · Full-Stack`,
+    description: `Software Engineer based in London. Portfolio and projects.`,
     author: `Alex Santonastaso`,
     keywords: `Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science, AWS, Terraform, FastAPI`,
     github: `https://github.com/snts42`,
