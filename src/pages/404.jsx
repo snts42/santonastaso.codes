@@ -16,7 +16,6 @@ export default function NotFoundPage() {
           linkedin
           resume
           email
-          phone
         }
       }
     }
@@ -51,7 +50,6 @@ export function Head() {
       title="Page Not Found" 
       description="The requested page could not be found. Return to Alex Santonastaso's developer portfolio homepage."
       pathname="/404/"
-      keywords="404, page not found, Alex Santonastaso"
     />
   );
 }

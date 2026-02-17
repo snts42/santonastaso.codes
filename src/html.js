@@ -12,37 +12,15 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         
-        {/* Default meta tags for social media previews and SEO */}
-        <title>Alex Santonastaso - Developer Portfolio</title>
-        <meta name="description" content="Software Developer from London" />
-        <meta name="keywords" content="Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby" />
-        <meta name="author" content="Alex Santonastaso" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta name="language" content="English" />
+        {/* Preconnect to Google Fonts for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         
-        {/* Theme color */}
-        <meta name="theme-color" content="#06b6d4" />
+        {/* SVG favicon - crisp at any size */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         
-        {/* Open Graph meta tags */}
-        <meta property="og:title" content="Alex Santonastaso - Developer Portfolio" />
-        <meta property="og:description" content="Software Developer from London" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://santonastaso.codes" />
-        <meta property="og:site_name" content="Alex Santonastaso - Developer Portfolio" />
-        <meta property="og:locale" content="en_US" />
-        
-        {/* Twitter Card meta tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Alex Santonastaso - Developer Portfolio" />
-        <meta name="twitter:description" content="Software Developer from London" />
-        
-        {/* Additional SEO meta tags */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Alex Santonastaso" />
-        <meta name="application-name" content="Alex Santonastaso" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
+        {/* Prevent telephone number auto-detection */}
         <meta name="format-detection" content="telephone=no" />
         
         {/* Dark mode script - must run before any rendering */}
@@ -52,13 +30,12 @@ export default function HTML(props) {
               (function() {
                 try {
                   var theme = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   
-                  // Default to dark mode if no preference set, or if explicitly set to dark
-                  if (theme === 'dark' || (!theme && prefersDark) || (!theme && !prefersDark)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
+                  // Default to dark mode for new visitors, respect explicit choice
+                  if (theme === 'light') {
                     document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
                   }
                 } catch (e) {
                   // Fallback to dark mode on any error

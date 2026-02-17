@@ -5,22 +5,11 @@ const getInitialTheme = () => {
   const stored = window.localStorage.getItem("theme");
   if (stored === "dark") return true;
   if (stored === "light") return false;
-  return true; // Default to dark when no preference is set
+  return true; // Default to dark mode for new visitors
 };
 
 const DarkModeToggle = ({ mobile = false }) => {
   const [dark, setDark] = useState(getInitialTheme);
-
-  // Listen to system preference changes if user never explicitly set
-  useEffect(() => {
-    const stored = typeof window !== "undefined" ? window.localStorage.getItem("theme") : null;
-    if (!stored) {
-      const media = window.matchMedia("(prefers-color-scheme: dark)");
-      const systemListener = (e) => setDark(e.matches);
-      media.addEventListener("change", systemListener);
-      return () => media.removeEventListener("change", systemListener);
-    }
-  }, []);
 
   // Apply dark mode class and store preference
   useEffect(() => {

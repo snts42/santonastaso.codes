@@ -9,14 +9,14 @@ const SectionExperience = ({ experience }) => {
   return (
     <Section title="Experience" titleDelay="animate-fade-in-up-delay-300" contentDelay="animate-fade-in-up-delay-300">
       {experience.filter(Boolean).map((item) => (
-      <SummaryItem
-    key={item.name}
-    name={item.name}
-    description={item.description}
-    link={item.link}
-    type="experience"
-  />
-))}
+        <SummaryItem
+          key={item.name}
+          name={item.name}
+          description={item.description}
+          link={item.link}
+          type="experience"
+        />
+      ))}
     </Section>
   );
 };

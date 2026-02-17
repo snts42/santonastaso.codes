@@ -13,14 +13,28 @@ const Layout = ({ children }) => {
       antialiased
       overflow-auto
     ">
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        Skip to content
+      </a>
       <DarkModeToggle />
       <div className="flex items-start justify-center min-h-screen pt-4 md:pt-12 pb-4 md:pb-12 px-4 md:px-12">
-        <main className="relative z-10 w-full max-w-6xl px-3 sm:px-4 md:px-12 py-4 md:py-12
+        <main id="main-content" className="relative z-10 w-full max-w-6xl px-3 sm:px-4 md:px-12 py-4 md:py-12
           md:bg-white/80 md:backdrop-blur-md md:rounded-3xl
           dark:md:bg-[#1e2936]/85 dark:md:backdrop-blur-lg
           focus:outline-none
         ">
           {children}
+          
+          {/* Footer */}
+          <footer className="mt-8 md:mt-12 pt-6 border-t border-gray-200 dark:border-gray-700/50 text-center">
+            <p className="text-xs text-gray-400 dark:text-gray-500 font-display">
+              &copy; {new Date().getFullYear()} Alex Santonastaso
+            </p>
+          </footer>
         </main>
       </div>
     </div>

@@ -10,12 +10,12 @@ export const useSiteMetadata = () => {
           title
           description
           author
+          keywords
           github
           linkedin
           resume
           about
           email
-          phone
         }
       }
     }

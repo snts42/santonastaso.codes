@@ -8,22 +8,22 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://santonastaso.codes/`,
     name: 'Alex Santonastaso',
-    title: `Alex Santonastaso - Developer Portfolio`,
-    description: `Software Developer from London`,
+    title: `Alex Santonastaso - Software Engineer`,
+    description: `Software Engineer · Python · Cloud · Full-Stack`,
     author: `Alex Santonastaso`,
-    keywords: `Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science`,
+    keywords: `Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science, AWS, Terraform, FastAPI`,
     github: `https://github.com/snts42`,
     linkedin: `https://www.linkedin.com/in/alex-santonastaso/`,
     resume: "/Alex-Santonastaso-CV.pdf",
     about: `Software Engineer with a background in Computer Science and Big Data Science. Experienced in building automation tools, web applications, and cloud infrastructure using Python and modern frameworks. I have a strong understanding of APIs, cloud services, and DevOps practices. I enjoy solving real world problems through efficient, maintainable code.`,
     email: "alex@santonastaso.com",
-    phone: "+44 7570 280428",
     projects: [
       {
         name: 'Secure File Sharing',
         description: 'Full-stack web application built with FastAPI, Gatsby, AWS, and Terraform',
         link: 'https://files.santonastaso.codes',
         featured: true,
+        sameTab: true,
       },
       {
         name: 'E-volve Results Automation',
@@ -33,12 +33,7 @@ module.exports = {
       {
         name: 'Automated Facial Emotion Recognition',
         description: 'Deep learning pipeline benchmarked for robustness to image blur',
-        link: 'https://github.com/snts42/facial-emotion-recognition',
-      },
-      {
-        name: 'XMRig-Zero',
-        description: 'CD pipeline that builds zero-fee XMRig binaries using GitHub Actions',
-        link: 'https://github.com/snts42/xmrig-zero',
+        link: '/Santonastaso_MSc_Dissertation_Facial_Emotion_Recognition.pdf',
       },
       {
         name: 'Portfolio Website',
@@ -131,21 +126,12 @@ module.exports = {
             return { ...page }
           })
         },
-        serialize: ({ path, modifiedGmt }) => {
-          // Set priority based on path
-          let priority = 0.5;
-          let changefreq = 'monthly';
-          
-          if (path === '/') {
-            priority = 1.0;
-            changefreq = 'weekly';
-          }
-          
+        serialize: ({ path }) => {
+          const isHome = path === '/';
           return {
             url: path,
-            lastmod: modifiedGmt,
-            priority: priority,
-            changefreq: changefreq,
+            priority: isHome ? 1.0 : 0.5,
+            changefreq: isHome ? 'weekly' : 'monthly',
           }
         },
       },
@@ -173,7 +159,6 @@ module.exports = {
         pluginConfig: {
           head: false,
           respectDNT: true,
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
           delayOnRouteUpdate: 0,
         },
       },
@@ -181,13 +166,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alex Santonastaso - Developer Portfolio`,
+        name: `Alex Santonastaso - Software Engineer`,
         short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#06b6d4`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`,
+        icon: `src/images/icon.svg`,
         legacy: false,
       },
     },

@@ -23,12 +23,12 @@ const IndexPage = () => {
           resume
           about
           email
-          phone
           projects {
             name
             description
             link
             featured
+            sameTab
           }
           experience {
             name
@@ -59,7 +59,7 @@ const IndexPage = () => {
       <SectionExperience experience={metadata.experience} />
       <SectionSkills skills={metadata.skills} />
       <SectionCertifications certifications={metadata.certifications} />
-      <SectionContact email={metadata.email} phone={metadata.phone} />
+      <SectionContact email={metadata.email} />
     </Layout>
   );
 };
@@ -70,9 +70,8 @@ export default IndexPage;
 export function Head() {
   return (
     <Seo 
-      title="Developer Portfolio"
-      description="Software Engineer with expertise in Python automation, web development, and data science. Showcasing projects and experience in modern technologies."
-      keywords="Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby"
+      title="Software Engineer"
+      description="Software Engineer specialising in Python, cloud infrastructure (AWS/Terraform), and full-stack web development. Currently building tools at the National Careers Service (UK Gov)."
       pathname="/"
     />
   );

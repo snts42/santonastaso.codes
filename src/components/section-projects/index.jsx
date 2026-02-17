@@ -15,6 +15,7 @@ const SectionProjects = ({ projects }) => {
           description={project.description}
           link={project.link}
           featured={project.featured}
+          sameTab={project.sameTab}
         />
       ))}
     </Section>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SummaryItem = ({ name, description, link, featured, type = "project" }) => {
+const SummaryItem = ({ name, description, link, featured, sameTab, type = "project" }) => {
   // Base styles for all items - mobile-optimized spacing
   const baseStyles = "mb-4 md:mb-4 group transition-all duration-300 ease-out";
   const titleStyles = "text-lg md:text-xl font-semibold font-display transition-all duration-300";
@@ -8,15 +8,11 @@ const SummaryItem = ({ name, description, link, featured, type = "project" }) =>
   const linkStyles = "focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded";
 
   if (featured && link) {
-    // Featured project - entire card is clickable with prominent hover effects
-    // Special case: Secure File Sharing opens in same tab
-    const shouldOpenInSameTab = name === 'Secure File Sharing';
-    
     return (
       <a
         href={link}
-        target={shouldOpenInSameTab ? "_self" : "_blank"}
-        rel={shouldOpenInSameTab ? undefined : "noopener noreferrer"}
+        target={sameTab ? "_self" : "_blank"}
+        rel={sameTab ? undefined : "noopener noreferrer"}
         className={`${baseStyles} block cursor-pointer hover:transform hover:scale-[1.02] ${linkStyles}
           rounded-lg transition-all duration-300 ease-out
           hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 dark:hover:from-cyan-950/30 dark:hover:to-blue-950/30 
@@ -31,21 +27,6 @@ const SummaryItem = ({ name, description, link, featured, type = "project" }) =>
           {description}
         </p>
       </a>
-    );
-  }
-
-  if (featured && !link) {
-    // Featured project without link - visual emphasis but not clickable
-    return (
-      <div className={`${baseStyles} rounded-lg transition-all duration-300 ease-out
-        hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 dark:hover:from-cyan-950/30 dark:hover:to-blue-950/30 
-        hover:-translate-y-0.5`}>
-        <h3 className={`${titleStyles} text-gray-900 dark:text-gray-100 group-hover:text-cyan-500 dark:group-hover:text-cyan-300`}>
-          {name}
-          <span className="ml-2 text-sm font-normal bg-cyan-100 dark:bg-cyan-950/50 text-cyan-800 dark:text-cyan-300 px-2 py-1 rounded-full group-hover:bg-cyan-200 dark:group-hover:bg-cyan-900/60 transition-colors duration-300 no-underline">LIVE</span>
-        </h3>
-        <p className={`${descriptionStyles} text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300`}>{description}</p>
-      </div>
     );
   }
 

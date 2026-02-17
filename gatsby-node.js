@@ -11,7 +11,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       linkedin: String
       resume: String
       email: String
-      phone: String
       about: String
       projects: [SectionItem]
       experience: [SectionItem]
@@ -23,6 +22,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
       description: String!
       link: String
+      featured: Boolean
+      sameTab: Boolean
     }
   `;
   createTypes(typeDefs);

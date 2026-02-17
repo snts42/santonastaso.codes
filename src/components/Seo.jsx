@@ -5,16 +5,16 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
   const metadata = useSiteMetadata();
 
   // Determine the appropriate title and description
-  const seoTitle = title ? `${title} - ${metadata.author}` : metadata.title;
+  const seoTitle = title ? `${metadata.author} - ${title}` : metadata.title;
   const seoDescription = description || metadata.description;
-  const seoKeywords = keywords || "Alex Santonastaso, software engineer, developer, portfolio, Python, automation, web development, React, Gatsby, computer science, data science";
+  const seoKeywords = keywords || metadata.keywords || "Alex Santonastaso, software engineer, developer, portfolio";
 
   const seo = {
     title: seoTitle,
     description: seoDescription,
     keywords: seoKeywords,
     url: `${metadata.siteUrl}${pathname || ``}`,
-    image: null, 
+    image: `${metadata.siteUrl.replace(/\/$/, '')}/og-image.png`,
   };
 
   // Structured data for the organization
@@ -50,14 +50,25 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
     "jobTitle": "Software Engineer",
     "description": metadata.description,
     "url": metadata.siteUrl,
-    "image": `${metadata.siteUrl}/android-chrome-512x512.png`,
+    "image": `${metadata.siteUrl.replace(/\/$/, '')}/android-chrome-512x512.png`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "London",
       "addressCountry": "GB"
     },
-    "alumniOf": "Queen Mary University of London",
-    "knowsAbout": ["Python", "React", "Gatsby", "Web Development", "Automation", "Data Science", "Computer Science"],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Queen Mary University of London",
+        "description": "MSc Big Data Science"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Westminster",
+        "description": "BSc Computer Science"
+      }
+    ],
+    "knowsAbout": ["Python", "JavaScript", "TypeScript", "React", "FastAPI", "AWS", "Terraform", "Docker", "CI/CD", "Web Development", "Automation", "Data Science"],
     "sameAs": [
       metadata.github,
       metadata.linkedin,
@@ -65,7 +76,8 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "Freelance Software Engineer"
+      "name": "National Careers Service",
+      "url": "https://nationalcareers.service.gov.uk/"
     }
   } : null;
 
@@ -92,12 +104,18 @@ const Seo = ({ title, description, pathname, keywords, image }) => {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={metadata.title} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_GB" />
+      
+      {/* Open Graph Image */}
+      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property="og:image:width" content="1200" />}
+      {seo.image && <meta property="og:image:height" content="630" />}
       
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content={seo.image ? "summary_large_image" : "summary"} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
       
       {/* Additional SEO Tags */}
       <meta name="theme-color" content="#06b6d4" />

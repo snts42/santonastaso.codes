@@ -52,7 +52,14 @@ typings/
 *.tgz
 
 # dotenv environment variable files
-.env*
+.env
+.env.*
+
+# Python virtual environment
+.venv/
+
+# GitHub Copilot instructions
+.github/
 
 # gatsby files
 .cache/
